@@ -1,4 +1,5 @@
 # XR Trading FPGA Assesment  
+This is a block that receive IP Network packets, detects an ARP Request and replies accordignly
 
 ## Files  
 .  
