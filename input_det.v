@@ -72,7 +72,7 @@ module input_det(
 
 
     //-- store data
-    always @(posedge clk or areset) begin
+    always @(state, blk_cnt or areset) begin
         if (areset) begin
             eth_dest_addr   <= 48'h0;
             eth_src_addr    <= 48'h0;
@@ -113,6 +113,21 @@ module input_det(
                      arp_dest_addr   <=  {arp_dest_addr[39:0], data_rx};
                 `ARP_DEST_IP:
                     arp_dest_ip     <=  {arp_dest_ip[23:0], data_rx};
+                `END: begin
+                    eth_dest_addr   <= eth_dest_addr;
+                    eth_src_addr    <= eth_src_addr;
+                    frame_type      <= frame_type;
+                    hw_type         <= hw_type;
+                    prot_type       <= prot_type;
+                    hw_len          <= hw_len;        
+                    prot_len        <= prot_len;      
+                    arp_op          <= arp_op;
+                    arp_src_addr    <= arp_src_addr;
+                    arp_src_ip      <= arp_src_ip;
+                    arp_dest_addr   <= arp_dest_addr;
+                    arp_dest_ip     <= arp_dest_ip;
+                end
+
                 default: begin
                     eth_dest_addr   <= 48'h0;
                     eth_src_addr    <= 48'h0;

@@ -16,7 +16,7 @@
 
 
 //-- frame values
-`define BRDCAST_DEST_ADDR  48'hFFFF
+`define BRDCAST_DEST_ADDR  48'hFFFFFFFFFFFF
 `define ARP_FRAME_TYPE     16'h0806
 `define ETH_HW_TYPE        16'h0001
 `define IP_PROT_TYPE       16'h0800
@@ -24,4 +24,4 @@
 `define IP_PROT_LEN        8'h04
 `define REQ_ARP_OP         16'h0001
 `define REP_ARP_OP         16'h0002
-`define ARP_REQ_ADDR       48'h0000
+`define ARP_REQ_ADDR       48'h000000000000

@@ -45,29 +45,39 @@ module arp_response_block (
     reg         sending;
 
     always @(posedge CLK_RX or posedge ARESET) begin
-        if(ARESET) begin
+        if(ARESET)
             arp_send        <= 1'b0;
-            source_mac      <= 48'd0;
-            source_ip       <= 32'd0;
-        end else begin
-            if(sending) begin
+        else
+            if(sending)
                 arp_send    <= 1'b0;
-                source_mac  <= 48'd0;
-                source_ip   <= 32'd0;
-            end else begin 
+            else
                 arp_send    <= arp_send_read;
+    end
+
+    
+    always @(posedge CLK_TX or ARESET) begin
+        if(ARESET) begin
+            source_mac      <= 48'h0;
+            source_ip       <= 32'h0;
+        end else begin
+            if(arp_send_read) begin
                 source_mac  <= source_mac_read;
                 source_ip   <= source_ip_read;
+            end else begin
+                source_mac  <= source_mac;
+                source_ip   <= source_ip;
             end
         end
     end
 
-    always @(posedge CLK_TX) begin
-        if(arp_send) begin
-            sending <= 1'b1;
-        end else begin
+    always @(posedge CLK_TX or ARESET) begin
+        if(ARESET)
             sending <= 1'b0;
-        end
+        else 
+            if(arp_send)
+                sending <= 1'b1;
+            else
+                sending <= 1'b0;
     end
 
     input_det in0(

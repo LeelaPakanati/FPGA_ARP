@@ -34,12 +34,12 @@ make input_det_tb
 
 Run testbench executable
 ```
-make run_input_det_
+make run_input_det
 ```
 
 Display input_det_waveform
 ```
-make display_output_MAC_waveform 
+make display_input_det_waveform 
 ```
 
 #### output_MAC testbench  
@@ -48,7 +48,7 @@ Build testbench executable
 make output_MAC_tb
 ```
 
-Run testbench executable. -need to enter verilog tb command 'finish' to exit
+Run testbench executable
 ```
 make run_output_MAC
 ```
@@ -59,4 +59,17 @@ make display_output_MAC_waveform
 ```
 
 #### arp_response_block testbench  
+Build testbench executable  
+```
+make arp_response_block_tb
+```
 
+Run testbench executable
+```
+make run_arp_response_block
+```
+
+Display output_mac waveform
+```
+make display_arp_response_block_waveform 
+```
