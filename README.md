@@ -1,18 +1,18 @@
 # XR Trading FPGA Assesment  
 
 ## Files  
-.
-├── arp_response_block.v    -   Top module for arp response
-├── blk_next_state.v        -   Logic for determining next state for input and output
-├── constants.vh            -   State constants and arp block values
-├── input_det.v             -   Detection of input data to see incoming arp request
-├── Makefile                -   Makefile for buiding/running/viewing -> see 'Compiling'
-├── output_MAC.v            -   Block to output arp response
-├── output_test_images/     -   Directory with waveform images
-├── output_waveforms/       -   Directory with waveforms
-├── README.md               -   This readme
-├── sim_execs/              -   Directory with executable to run testbenches and make waveforms
-└── test_benches/           -   Directory with testbenches
+.  
+├── arp_response_block.v    -   Top module for arp response  
+├── blk_next_state.v        -   Logic for determining next state for input and output  
+├── constants.vh            -   State constants and arp block values  
+├── input_det.v             -   Detection of input data to see incoming arp request  
+├── Makefile                -   Makefile for buiding/running/viewing -> see 'Compiling'  
+├── output_MAC.v            -   Block to output arp response  
+├── output_test_images/     -   Directory with waveform images  
+├── output_waveforms/       -   Directory with waveforms  
+├── README.md               -   This readme  
+├── sim_execs/              -   Directory with executable to run testbenches and make waveforms  
+└── test_benches/           -   Directory with testbenches  
 
 
 
